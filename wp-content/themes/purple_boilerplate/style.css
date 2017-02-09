@@ -14,9 +14,6 @@ Purple Mountain Boilerplate WordPress Theme © 2016
 
 */
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
-.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
-
 /* General */
 .purple_image {
     margin-top: 40px;
@@ -25,9 +22,202 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .main_container {
     background: #fbfafa;
 }
+.btn-default {
+    padding-right: 95px!important;
+    border-radius: 0px!important;
+    -webkit-transition: all 600ms cubic-bezier(.47,0,.745,.715);
+    transition: all 600ms cubic-bezier(.47,0,.32,1.02);
+    background: rgba(255, 255, 255, 0.86)!important;
+    border: 0!important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2)!important;
+}
+.btn-default:hover {
+    padding-right: 75px!important;
+}
 
 /* Header */
+.head {
+    position: relative;
+    width: 100%;
+}
+img.home_head_logo {
+    position: absolute;
+    z-index: 100;
+    top: 20px;
+    left: 30px;
+    max-width: 85px;
+}
+.menu_bars {
+    position: absolute;
+    z-index: 100;
+    color: white;
+    right: 30px;
+    top: 30px;
+    font-size: 20px!important;
+    cursor: pointer;
+}
+.menu.visible {
+    width: 100%;
+    height: 400px;
+    margin-bottom: -400px;
+    position: relative;
+    background: #505050;
+    z-index: 100;
+    display: block;
+    -webkit-transition: all 600ms cubic-bezier(.47,0,.745,.715);
+    transition: all 300ms cubic-bezier(.47,0,.32,1.02);
+}
+.menu.invisible {
+  display: none;
+}
+.home_head_container {
+    width: 100%;
+    position: relative;
+    padding: 30px;
+}
+@media (max-width: 1000px) {
+  .home_head_container {
+    padding: 15px;
+  }
+}
+.home_head_innner {
+    width: 100%;
+    height: 400px!important;
+    position: relative;
+    overflow: hidden;
+}
+.home_head_innner.purple {
+  background: #9B2686;
+}
+.home_head_innner.purple.slick-slide.slick-current.slick-active a.home_head_btn {
+  color: #9B2686!important;
+}
+.home_head_innner.blue {
+  background: #008DE7;
+}
+.home_head_innner.blue.slick-slide.slick-current.slick-active a.home_head_btn {
+  color: #008DE7!important;
+}
+.home_head_innner.yellow {
+  background: #E6DA48;
+}
+.home_head_innner.yellow.slick-slide.slick-current.slick-active a.home_head_btn {
+  color: #E6DA48!important;
+}
+.home_head_innner.green {
+  background: #60CF67;
+}
+.home_head_innner.green.slick-slide.slick-current.slick-active a.home_head_btn {
+  color: #60CF67!important;
+}
+a.home_head_btn {
+    float: right;
+    position: absolute;
+    bottom: 9%;
+    right: 5%;
+}
+@media (max-width: 1000px) {
+  a.home_head_btn {
+    bottom: 17%;
+  }
+}
+h1.home_head_text {
+    color: white;
+    font-weight: 100;
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
+    font-size: 50px;
+}
+div#slider_dots {
+    text-align: center;
+    margin-top: -62px;
+    margin-bottom: 62px;
+    position: relative;
+}
+@media (max-width: 1000px) {
+  div#slider_dots {
+      margin-top: -45px;
+      margin-bottom: 45px;
+  }
+}
+ul.slick-dots {
+  -webkit-padding-start: 0px!important;
+}
+ul.slick-dots li {
+    display: inline;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+ul.slick-dots li button {
+    background: transparent;
+    border: 0.5px solid white;
+    border-radius: 100%;
+    height: 12px;
+    width: 12px;
+    color: transparent;
+    padding: 0px;
+}
+ul.slick-dots li button:hover {
+    background: rgba(255, 255, 255, 0.86);
+}
+ul.slick-dots li button:focus {
+    outline: none;
+}
+ul.slick-dots li.slick-active button {
+    background: white;
+}
+.box {
+    background: rgba(255, 255, 255, 0.07);
+    position: absolute;
+    height: 140px;
+    box-shadow: 5px -3px 20px 0px rgba(0, 0, 0, 0.14);
+    -webkit-transition: all 600ms cubic-bezier(.47,0,.745,.715);
+    transition: all 300ms cubic-bezier(.47,0,.32,1.02);
+}
+.box:hover{
+  box-shadow: none;
 
+}
+.box.one {
+    transform: rotate(35deg);
+    width: 617px;
+    bottom: 40px;
+    left: -103px;
+}
+.box.two {
+    width: 1023px;
+    transform: rotate(-55deg);
+    bottom: -45px;
+    left: -62px;
+}
+.box.three {
+    width: 3023px;
+    transform: rotate(-145deg);
+    left: -659px;
+}
+ul.main_menu_list {
+    list-style-type: none;
+}
+ul.main_menu_list {
+    list-style-type: none;
+    margin-top: 100px;
+    position: absolute;
+    width: 100%;
+    -webkit-padding-start: 0px!important;
+}
+.menu-item a {
+    color: white;
+    font-weight: 100;
+    font-size: 30px;
+    text-decoration: none!important;
+}
+span.menu_item {
+    padding: 10px;
+}
+.menu-item a:hover span.menu_item {
+    padding: 12px;
+}
 
 /* Home */
 

@@ -18,14 +18,9 @@ global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
 register_nav_menus(
 array( 'main-menu' => __( 'Main Menu', 'purple_boilerplate' ),
-		'secondary-menu' => __( 'Secondary Menu', 'purple_boilerplate' )  
+		'secondary-menu' => __( 'Secondary Menu', 'purple_boilerplate' )
 	 )
 );
-}
-add_action( 'wp_enqueue_scripts', 'purple_boilerplate_load_scripts' );
-function purple_boilerplate_load_scripts()
-{
-wp_enqueue_script( 'jquery' );
 }
 add_action( 'comment_form_before', 'purple_boilerplate_enqueue_comment_reply_script' );
 function purple_boilerplate_enqueue_comment_reply_script()
@@ -70,7 +65,7 @@ function purple_boilerplate_custom_pings( $comment )
 $GLOBALS['comment'] = $comment;
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
-<?php 
+<?php
 }
 add_filter( 'get_comments_number', 'purple_boilerplate_comments_number' );
 function purple_boilerplate_comments_number( $count )
@@ -84,17 +79,28 @@ return $count;
 }
 }
 function wpt_register_js() {
+		wp_register_script('jquery.min', get_template_directory_uri() . '/js/jquery.js');
+		wp_enqueue_script( 'jquery.min' );
+
     wp_register_script('bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js');
-    wp_enqueue_script('bootstrap.min');
+    wp_enqueue_script('bootstrap.min','','','', true);
+
+		wp_register_script('slick.min', get_template_directory_uri() . '/js/slick.min.js');
+		wp_enqueue_script('slick.min','','','', true);
 }
 add_action( 'init', 'wpt_register_js' );
 function wpt_register_css() {
-    wp_register_style( 'bootstrap.min', get_template_directory_uri() . '/css/bootstrap.min.css' );
-    wp_register_style( 'style', get_template_directory_uri() . '/css/style.css' );
-    wp_register_style( 'style', get_template_directory_uri() . '/css/animate.css' );
-    wp_enqueue_style( 'bootstrap.min' );
-    wp_enqueue_style( 'animate' );
-    wp_enqueue_style( 'style' );
+    wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
+    wp_register_style( 'style', get_stylesheet_uri() );
+		wp_register_style( 'animate', get_template_directory_uri() . '/css/animate.css' );
+		wp_register_style( 'slick', get_template_directory_uri() . '/css/slick.css' );
+    wp_register_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
+
+    wp_enqueue_style( 'bootstrap' );
+		wp_enqueue_style( 'style' );
+		wp_enqueue_style( 'animate' );
+		wp_enqueue_style( 'slick' );
+    wp_enqueue_style( 'font-awesome' );
 }
 add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
 
@@ -123,28 +129,28 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 add_filter( 'comment_form_default_fields', 'bootstrap3_comment_form_fields' );
 function bootstrap3_comment_form_fields( $fields ) {
     $commenter = wp_get_current_commenter();
-    
+
     $req      = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
     $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
-    
+
     $fields   =  array(
         'author' => '<div class="form-group comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                     '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div>',
         'email'  => '<div class="form-group comment-form-email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                     '<input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div>'
     );
-    
+
     return $fields;
 }
 
 add_filter( 'comment_form_defaults', 'bootstrap3_comment_form' );
 function bootstrap3_comment_form( $args ) {
     $args['comment_field'] = '<div class="form-group comment-form-comment">
-            <label for="comment">' . _x( 'Comment <span class="required">*</span>', 'noun' ) . '</label> 
+            <label for="comment">' . _x( 'Comment <span class="required">*</span>', 'noun' ) . '</label>
             <textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
         </div>';
     $args['class_submit'] = 'btn btn-primary'; // since WP 4.1
-    
+
     return $args;
 }
