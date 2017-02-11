@@ -154,3 +154,13 @@ function bootstrap3_comment_form( $args ) {
 
     return $args;
 }
+
+function purple_custom_excerpt_length( $length ) {
+    return 35;
+}
+add_filter( 'excerpt_length', 'purple_custom_excerpt_length', 999 );
+
+function purple_excerpt_more( $more ) {
+    return ' <a href="'.get_the_permalink().'" rel="nofollow">Continue Reading...</a>';
+}
+add_filter( 'excerpt_more', 'purple_excerpt_more' );

@@ -6,9 +6,13 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="home_head_container">
+<div class="home_head_wrap">
+<div class="home_head_container purple_container">
   <div id="main_menu" class="main_menu menu animated invisible">
     <ul class="main_menu_list text-center">
+      <div class="box one"></div>
+      <div class="box two"></div>
+      <div class="box three"></div>
       <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'link_after' => '<span class="menu_item after">-</span>', 'link_before' => '<span class="menu_item before">-</span>', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
     </ul>
 
@@ -25,7 +29,7 @@
     <i id="bars" class="menu_bars bars_inactive fa fa-bars" aria-hidden="true"></i>
   </div>
   <div class="home_head_slider">
-    <div class="home_head_innner purple">
+    <div class="home_head_innner first_load purple">
       <div class="box one"></div>
       <div class="box two"></div>
       <div class="box three"></div>
@@ -36,23 +40,24 @@
       <div class="box one"></div>
       <div class="box two"></div>
       <div class="box three"></div>
-      <h1 class="home_head_text text-center">We craft user interactions...</h1>
+      <h1 class="home_head_text text-center">We develop web applications...</h1>
       <a href="/test" class="home_head_btn btn btn-lg btn-default">Find Out More  >></a>
     </div>
     <div class="home_head_innner yellow">
       <div class="box one"></div>
       <div class="box two"></div>
       <div class="box three"></div>
-      <h1 class="home_head_text text-center">We craft user interactions...</h1>
+      <h1 class="home_head_text text-center">We produce visual experiences...</h1>
       <a href="/test" class="home_head_btn btn btn-lg btn-default">Find Out More  >></a>
     </div>
     <div class="home_head_innner green">
       <div class="box one"></div>
       <div class="box two"></div>
       <div class="box three"></div>
-      <h1 class="home_head_text text-center">We craft user interactions...</h1>
+      <h1 class="home_head_text text-center">We nuture digital content...</h1>
       <a href="/test" class="home_head_btn btn btn-lg btn-default">Find Out More  >></a>
     </div>
   </div>
 </div>
 <div id="slider_dots" class="home_head_dots"></div>
+</div>

@@ -12,7 +12,8 @@
 <script>
 $(document).ready(function(){
   $('.home_head_slider').slick({
-    // autoplay: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
     dots: true,
     appendDots: $('.home_head_dots'),
     arrows: false
@@ -20,7 +21,6 @@ $(document).ready(function(){
 
   $("#bars").click(function(){
     if ($("#bars").hasClass("bars_active")) {
-      console.log('active');
       $("#main_menu").addClass("zoomOut");
       $("#bars").fadeOut();
 
