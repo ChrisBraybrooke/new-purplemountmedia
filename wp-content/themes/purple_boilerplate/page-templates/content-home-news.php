@@ -1,4 +1,10 @@
-<div class="inner_home_post_row row">
+<style>
+#underline3 {
+  background: #9B2686;
+}
+</style>
+
+<div class="inner_home_post_row purple_row row">
 <?php query_posts(array('posts_per_page' => 3, 'post_type' => 'post', 'post_status' => 'publish', 'orderby' => 'desc' ));?>
 <?php $i = 0; ?>
 <div class="top_home_post_left_col col-md-4">
@@ -14,7 +20,7 @@
 <div class="top_home_post_container post_<?php echo $i; ?> <?php echo $col_width; ?>">
 <?php edit_post_link(); ?>
 <h2><?php the_title(); ?></h2>
-<div class="underline purple"></div>
+<div id="underline<?php echo $i; ?>" class="underline"></div>
 <?php $excerpt = get_the_content(); ?>
 <?php $excerpt = substr( $excerpt, 0, $excerpt_length ) . '...'; ?>
 <p><?php echo $excerpt; ?></p>

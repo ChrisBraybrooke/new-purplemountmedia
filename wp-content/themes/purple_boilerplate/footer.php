@@ -8,7 +8,11 @@
 </div>
 </footer>
 <?php wp_footer(); ?>
-
+<script>
+  var rellax = new Rellax('.home_row_image_default', {
+    center: true
+  });
+</script>
 <script>
 $(document).ready(function(){
   $('.home_head_slider').slick({
@@ -40,7 +44,26 @@ $(document).ready(function(){
   $(".menu-item a").click(function(){
     $("#main_menu").addClass("fadeOut");
   });
+});
 
+
+</script>
+<script>
+$('.home_head_slider').on('afterChange', function(event, slick, direction){
+  if(slick.currentSlide == 0) {
+    $('#underline3').animate({backgroundColor: '#9B2686'});
+  }
+  if(slick.currentSlide == 1) {
+    $('#underline3').animate({backgroundColor: '#008DE7'});
+  }
+  if(slick.currentSlide == 2) {
+    $('#underline3').animate({backgroundColor: '#008DE7'}, 1000);
+
+  }
+  if(slick.currentSlide == 3) {
+    $('#underline3').animate({backgroundColor: '#008DE7'}, 1000);
+
+  }
 });
 </script>
 </body>
