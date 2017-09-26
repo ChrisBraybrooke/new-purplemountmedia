@@ -49,22 +49,22 @@ $(document).ready(function(){
 
 </script>
 <script>
-$('.home_head_slider').on('afterChange', function(event, slick, direction){
-  if(slick.currentSlide == 0) {
-    $('#underline3').animate({backgroundColor: '#9B2686'});
-  }
-  if(slick.currentSlide == 1) {
-    $('#underline3').animate({backgroundColor: '#008DE7'});
-  }
-  if(slick.currentSlide == 2) {
-    $('#underline3').animate({backgroundColor: '#008DE7'}, 1000);
-
-  }
-  if(slick.currentSlide == 3) {
-    $('#underline3').animate({backgroundColor: '#008DE7'}, 1000);
-
-  }
-});
+// $('.home_head_slider').on('afterChange', function(event, slick, direction){
+//   if(slick.currentSlide == 0) {
+//     $('#underline3').animate({backgroundColor: '#9B2686'}, 1000);
+//   }
+//   if(slick.currentSlide == 1) {
+//     $('#underline3').animate({backgroundColor: '#008DE7'}, 1000);
+//   }
+//   if(slick.currentSlide == 2) {
+//     $('#underline3').animate({backgroundColor: '#008DE7'}, 1000);
+//
+//   }
+//   if(slick.currentSlide == 3) {
+//     $('#underline3').animate({backgroundColor: '#008DE7'}, 1000);
+//
+//   }
+// });
 </script>
 </body>
 </html>

@@ -129,6 +129,9 @@ img.home_head_logo {
 .menu.invisible {
   display: none;
 }
+.menu ul {
+    list-style: none;
+}
 @media (max-width: 1000px) {
   .home_head_container {
     padding: 15px;
@@ -260,26 +263,26 @@ ul.slick-dots li.slick-active button {
   background: rgba(255, 255, 255, 0.04);
 }
 #main_menu .box.one {
-  left: -115px;
-  bottom: -84px;
+    left: -118px;
+    bottom: -170px;
 }
 #main_menu .box.two {
-  left: 30px;
+    left: 93px;
 }
 #main_menu .box.three {
   left: -515px;
 }
-ul.main_menu_list {
+.main_menu ul {
   list-style-type: none;
 }
-ul.main_menu_list {
+.main_menu ul {
   list-style-type: none;
   margin-top: 100px;
   position: absolute;
   width: 100%;
   -webkit-padding-start: 0px!important;
 }
-.menu-item a {
+.main_menu ul li a {
   color: white;
   font-weight: 200;
   font-size: 30px;
@@ -289,7 +292,7 @@ ul.main_menu_list {
 span.menu_item {
   padding: 10px;
 }
-.menu-item a:hover span.menu_item {
+.main_menu ul li a:hover span.menu_item {
   padding: 12px;
 }
 
@@ -395,7 +398,7 @@ span.feat_post_cats a {
   margin-top: 60px;
 }
 .inner_home_camera_row {
-    padding-bottom: 40px;
+    padding-bottom: 0px;
 }
 p.macbook_row_text, h1.macbook_row_heading {
   color: white;

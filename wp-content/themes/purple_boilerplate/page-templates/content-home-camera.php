@@ -5,6 +5,6 @@
     <a href="#" class="camera_row_btn btn btn-lg btn-default text_purple">Click Me >></a>
   </div>
   <div class="col-md-6">
-    <?php echo wp_get_attachment_image( 31, "", "", array( "class" => "home_camera_img home_row_image_default img-responsive", "data-rellax-speed" => 3 ) ); ?>
+    <?php echo wp_get_attachment_image( 6, "", "", array( "class" => "home_camera_img home_row_image_default img-responsive", "data-rellax-speed" => 3 ) ); ?>
   </div>
 </div>

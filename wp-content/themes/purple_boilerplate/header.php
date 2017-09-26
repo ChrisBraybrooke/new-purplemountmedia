@@ -9,21 +9,21 @@
 <div class="home_head_wrap">
 <div class="home_head_container purple_container">
   <div id="main_menu" class="main_menu menu animated invisible">
-    <ul class="main_menu_list text-center">
-      <div class="box one"></div>
-      <div class="box two"></div>
-      <div class="box three"></div>
-      <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'link_after' => '<span class="menu_item after">-</span>', 'link_before' => '<span class="menu_item before">-</span>', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
-    </ul>
+    <div class="box one"></div>
+    <div class="box two"></div>
+    <div class="box three"></div>
+    <div class="main_menu_list text-center">
+      <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'main_menu', 'link_after' => '<span class="menu_item after">-</span>', 'link_before' => '<span class="menu_item before">-</span>',) ); ?>
+    </div>
 
   </div>
   <div class="head">
     <a href="/">
-      <?php $logo = wp_get_attachment_image( 7, "feature_small", "", array( "class" => "home_head_logo img-responsive", "id" => 'main_logo' ) ); ?>
+      <?php $logo = wp_get_attachment_image( 15, "", "", array( "class" => "home_head_logo img-responsive", "id" => 'main_logo' ) ); ?>
       <?php if (!empty($logo)){ ?>
       <?php  echo $logo; ?>
       <?php } else { ?>
-      <?php  echo wp_get_attachment_image( 7, "feature_small", "", array( "class" => "home_head_logo img-responsive center-block" ) ); ?>
+      <?php  echo wp_get_attachment_image( 14, "feature_small", "", array( "class" => "home_head_logo img-responsive center-block" ) ); ?>
       <?php } ?>
     </a>
     <i id="bars" class="menu_bars bars_inactive fa fa-bars" aria-hidden="true"></i>
